@@ -1,5 +1,3 @@
-
-
 import cv2
 import numpy as np
 
@@ -25,14 +23,14 @@ def four_point_transform(image , pts):
     B = np.sqrt( ((tl[0] - tr[0]) **2) + ((tl[1] - tr[1])**2) )
     maxw = max(int(A) , int(B))
 
-    print("A: {} \tB: {}\tmaxw: {}".format(A,B,maxw))
+    # print("A: {} \tB: {}\tmaxw: {}".format(A,B,maxw))
 
     # Max Height Calc
     C = np.sqrt(((bl[0]-tl[0])**2) + ((bl[1]-tl[1])**2))
     D = np.sqrt(((tr[0]-br[0])**2) + ((tr[1]-br[1])**2))
     maxh = max(int(C) , int(D))
 
-    print("C: {} \tD: {}\tmaxh: {}".format(A,B,maxh))
+    # print("C: {} \tD: {}\tmaxh: {}".format(A,B,maxh))
 
     dst = np.array([
         [0,0] , 
@@ -42,7 +40,7 @@ def four_point_transform(image , pts):
     ] , dtype="float32")
 
     M = cv2.getPerspectiveTransform(rect,dst)
-    print(M)
+    # print(M)
     warped = cv2.warpPerspective(image , M , (maxw , maxh))
 
     return warped
