@@ -1,0 +1,3 @@
+From 
+1. https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/
+2. https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/

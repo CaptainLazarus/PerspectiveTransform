@@ -1,3 +1,5 @@
+
+
 import cv2
 import numpy as np
 
@@ -19,7 +21,7 @@ def four_point_transform(image , pts):
     (tl , tr , br , bl) = rect
 
     # Max distance calculation
-    A = np.sqrt( ((bl[0] - br[0])**2) + (bl[1]-br[1])**2 )
+    A = np.sqrt( ((bl[0] - br[0])**2) + ((bl[1]-br[1])**2))
     B = np.sqrt( ((tl[0] - tr[0]) **2) + ((tl[1] - tr[1])**2) )
     maxw = max(int(A) , int(B))
 
